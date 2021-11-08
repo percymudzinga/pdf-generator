@@ -26,7 +26,7 @@ app.post('/', async (req, res) => {
         console.log(`ws://${process.env.CHROME_URL}`);
         // const browser = await puppeteer.connect({ browserWSEndpoint: `ws://${process.env.CHROME_URL}` });
         // const browser = await puppeteer.connect({ browserWSEndpoint: `wss://localhost:3001` });
-        const browser = await puppeteer.launch({headless: false});
+        const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.goto(url, {
         waitUntil: 'networkidle2',
