@@ -23,10 +23,14 @@ app.post('/', async (req, res) => {
     };
 
     try {
-        console.log(`ws://${process.env.CHROME_URL}`);
-        // const browser = await puppeteer.connect({ browserWSEndpoint: `ws://${process.env.CHROME_URL}` });
-        // const browser = await puppeteer.connect({ browserWSEndpoint: `wss://localhost:3001` });
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            headless: true,
+            executablePath: '/usr/bin/chromium-browser',
+            args: [
+            "--no-sandbox",
+            "--disable-gpu",
+            ]
+        });
         const page = await browser.newPage();
         await page.goto(url, {
         waitUntil: 'networkidle2',
