@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    font-size: 10px;
+}
+body {
+    padding: 16px;
+}
+/* @page {
+    margin-top: 0.4in;
+    margin-bottom: 0.4in;
+    margin-left: 0.4in;
+    margin-right: 0.4in;    
+} */
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info .date {
+    font-size: 10px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+@media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
+
+.group-title {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #b3b0b0;
+    border: 1px solid grey;
+    color: #474747;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.group-title span {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.form-group {
+    border: 1px solid grey;
+}
+
+.form-row {
+    display: grid;
+    border-bottom: 1px solid grey;
+}
+
+.form-row:nth-last-child(1) {
+    border-bottom: none;
+  }
+
+.first-row {
+    grid-template-columns: 50% 16.6% 16.6% 16.6%;
+}
+
+.second-row {
+    grid-template-columns: 25% 16.6% 16.6% 16.6% 25% ;
+}
+
+.third-row {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.forth-row {
+    grid-template-columns: 25% 25% 16.6% 16.6% 16.6%;
+}
+
+.fifth-row {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.field {
+    margin: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    flex-direction: row;
+    align-items: center;
+}
+
+.field input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 8px 0px;
+}
+
+.relationship-container {
+    padding-left: 10%;
+    padding-right: 10%;
+    position: relative;
+}
+
+.relationship-status {
+    background-color: #b6b6b6;
+    top: 50%;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.relationship-item {
+    display: flex;
+    align-items: center;
+}
